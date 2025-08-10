@@ -1,0 +1,305 @@
+/* Custom Styles for EmTeK CoE Portfolio */
+
+/* =========== Base Styles =========== */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+    background-color: transparent; 
+    color: #f0f0f0;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* Hide scrollbar for a cleaner look */
+body::-webkit-scrollbar { 
+    display: none;
+}
+body {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* =========== Starfield Background Canvas =========== */
+#background-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Place it behind all other content */
+}
+
+/* =========== Main Content Layout =========== */
+.main-container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+.content-section {
+    padding: 120px 5%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+/* =========== Glassmorphism Effect =========== */
+.glass-container {
+    background: rgba(18, 16, 41, 0.6); /* Semi-transparent dark background */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    width: 100%;
+    max-width: 1200px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    overflow: hidden; /* Re-enabled to prevent carousel overflow */
+    position: relative; /* Added for arrow positioning context */
+}
+
+/* =========== Typography =========== */
+h1, h2, h3 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #fff;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5vw, 5rem); /* Responsive font size */
+    line-height: 1.1;
+    text-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 40px;
+}
+
+h3 {
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    margin-bottom: 10px;
+    color: #eee;
+}
+
+p {
+    font-size: clamp(1rem, 1.5vw, 1.1rem);
+    line-height: 1.8;
+    color: #c0c0c0;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+/* =========== UI Elements =========== */
+/* Custom Buttons */
+.cta-button {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #fff;
+    background: linear-gradient(90deg, #4f46e5, #c026d3);
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin: 10px;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(192, 38, 211, 0.4);
+}
+
+.cta-button-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.cta-button-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Cards for About, Team, Mentors */
+.about-card, .team-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 25px;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%; /* Ensure cards in a row have same height */
+}
+.about-card:hover, .team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Partner Logos */
+.partner-logo {
+    height: 60px;
+    margin: 20px auto; /* Center logo in slide */
+    filter: grayscale(100%) brightness(1.5) contrast(0.8);
+    transition: all 0.3s ease;
+    opacity: 0.7;
+}
+.partner-logo:hover {
+    filter: none;
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Contact Form */
+.contact-form input, .contact-form textarea {
+    background: rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 10px;
+    padding: 15px;
+    color: #fff;
+    width: 100%;
+    transition: border-color 0.3s ease;
+}
+.contact-form input::placeholder, .contact-form textarea::placeholder {
+    color: #888;
+}
+.contact-form input:focus, .contact-form textarea:focus {
+    outline: none;
+    border-color: #8b5cf6; /* Indigo focus color */
+}
+
+/* =========== Header =========== */
+header {
+    background: rgba(12, 12, 29, 0.5);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    transition: background-color 0.3s ease;
+}
+
+/* =========== Social Sidebar =========== */
+.social-sidebar {
+    position: fixed;
+    left: 40px;
+    bottom: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column; /* This is the key to making it vertical */
+    align-items: center;
+}
+
+.social-sidebar a {
+    margin-bottom: 20px;
+    font-size: 1.5rem; /* 24px */
+    color: #c0c0c0; /* Light gray for icons */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-sidebar a:hover {
+    color: #8b5cf6; /* Indigo color on hover */
+    transform: scale(1.2) translateY(-2px);
+}
+
+/* This creates the vertical line */
+.social-sidebar::after {
+    content: '';
+    width: 1px;
+    height: 90px;
+    background-color: #c0c0c0;
+    display: block;
+}
+
+/* =========== Carousel (Swiper.js) Styles =========== */
+.swiper-container {
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 50px; /* Space for pagination */
+    position: static; /* Let the glass-container handle positioning */
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#partners .swiper-slide {
+    height: 100px; /* Specific height for partner logos */
+}
+
+/* Carousel Navigation Arrows */
+.swiper-button-next,
+.swiper-button-prev {
+    position: absolute; /* Position relative to .glass-container */
+    top: 60%;
+    transform: translateY(-50%);
+    color: #8b5cf6; /* Indigo color for arrows */
+    transition: transform 0.2s ease;
+}
+
+/* Adjusted arrow positions to be inside the container's padding */
+.swiper-button-next {
+    right: 10px; 
+}
+.swiper-button-prev {
+    left: 10px;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    transform: translateY(-50%) scale(1.2);
+}
+
+/* Carousel Pagination Bullets */
+.swiper-pagination-bullet {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.swiper-pagination-bullet-active {
+    background: #8b5cf6; /* Indigo active color */
+}
+
+/* =========== Component-Specific Adjustments =========== */
+/* Ensures the banner subtitle is properly centered */
+#banner p {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =========== Footer =========== */
+footer {
+    width: 100%;
+    text-align: center;
+}
+
+
+/* =========== Responsive Adjustments =========== */
+@media (max-width: 900px) { /* Increased breakpoint for hiding arrows */
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none; /* Hide arrows on smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .content-section {
+        padding: 80px 5%;
+    }
+    .glass-container {
+        padding: 25px;
+    }
+    header nav ul {
+        display: none; /* Simple mobile nav, can be enhanced with JS */
+    }
+    .social-sidebar {
+        display: none; /* Hide social bar on smaller screens */
+    }
+}

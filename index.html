@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmTeK CoE - Electronics & Mobility Technology Center of Entrepreneurship</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Swiper.js CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <!-- Tailwind CSS for utility classes -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/phosphor-icons"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Canvas for the starfield background -->
+    <canvas id="background-canvas"></canvas>
+
+    <!-- Social Sidebar (populated by app.js) -->
+    <div class="social-sidebar"></div>
+
+    <!-- Main container for dynamically injected content -->
+    <div class="main-container">
+        <!-- Header/Navigation (partially populated by app.js) -->
+        <header class="fixed top-0 left-0 right-0 z-50 p-6">
+            <nav class="flex justify-between items-center max-w-7xl mx-auto">
+                <div class="text-2xl font-bold font-syne"></div>
+                <ul class="hidden md:flex space-x-8 font-semibold"></ul>
+            </nav>
+        </header>
+        <!-- Sections will be injected here by app.js -->
+    </div>
+
+    <!-- Swiper.js JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    
+    <!-- Custom Scripts -->
+    <script src="starfield.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
