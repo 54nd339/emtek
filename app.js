@@ -1,11 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
     
+    // --- Preloader Functionality ---
+    const preloader = document.getElementById('preloader');
+    const mainContainer = document.querySelector('.main-container');
+
+    function hidePreloader() {
+        preloader.classList.add('fade-out');
+        preloader.addEventListener('transitionend', () => {
+            preloader.style.display = 'none';
+        });
+        mainContainer.style.opacity = 1;
+    }
+
     // Function to fetch and inject content from config.json
     async function loadContent() {
         try {
             const response = await fetch('config.json');
             if (!response.ok) {
-                throw new Error('Network response was not ok: ' + response.statusText);
+                throw new Error(`Network response was not ok: ${response.statusText}`);
             }
             const config = await response.json();
 
@@ -18,16 +30,19 @@ document.addEventListener("DOMContentLoaded", () => {
             const socialContainer = document.querySelector('.social-sidebar');
             socialContainer.innerHTML = config.socialLinks.map(link => `<a href="${link.url}"><i class="${link.icon}"></i></a>`).join('');
 
-            const mainContainer = document.querySelector('.main-container');
             // Inject all sections into the main container
             mainContainer.innerHTML += generateSections(config);
             
             // Initialize animations and carousels after content is in the DOM
             initializeContentAnimations();
             initializeCarousels();
+            
+            // Hide preloader after everything is set up
+            hidePreloader();
 
         } catch (error) {
             console.error('Failed to load page content:', error);
+            hidePreloader(); // Still hide preloader on error
         }
     }
 
@@ -51,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <section id="banner" class="content-section h-screen flex items-center justify-center">
             <div class="glass-container text-center">
                 <h1 class="text-5xl md:text-7xl font-bold mb-4">${title}</h1>
-                <p class="text-xl md:text-2xl mb-8">${subtitle}</p>
+                <p class="text-xl md:text-2xl mb-8 text-center mx-auto">${subtitle}</p>
                 <div>${buttons.map(btn => `<a href="${btn.href}" class="${btn.primary ? 'cta-button' : 'cta-button cta-button-secondary'}">${btn.text}</a>`).join('')}</div>
             </div>
         </section>`;
@@ -73,72 +88,56 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
         </section>`;
 
-    // Updated to generate Swiper carousel structure
     const generateStartups = ({ title, items }) => `
         <section id="startups" class="content-section">
             <div class="glass-container">
                 <h2 class="text-4xl md:text-5xl mb-12 text-center">${title}</h2>
-                <div class="swiper-container">
-                    <div class="swiper-wrapper">
+                <div class="scrolling-gallery">
+                    <div class="scrolling-gallery-inner">
                         ${items.map(item => `
-                            <div class="swiper-slide">
-                                <div class="team-card text-center">
-                                    <img src="${item.logo}" alt="${item.name} Logo" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-gray-600">
-                                    <h3 class="text-xl font-bold">${item.name}</h3>
-                                    <p class="text-gray-400">${item.description}</p>
-                                </div>
+                            <div class="team-card text-center">
+                                <img src="${item.logo}" alt="${item.name} Logo" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-gray-600 object-cover">
+                                <h3 class="text-xl font-bold">${item.name}</h3>
+                                <p class="text-gray-400">${item.description}</p>
                             </div>
                         `).join('')}
                     </div>
-                    <div class="swiper-pagination"></div>
                 </div>
             </div>
         </section>`;
 
-    // Updated to generate Swiper carousel structure
     const generateManagement = ({ title, members }) => `
         <section id="management" class="content-section">
             <div class="glass-container">
                 <h2 class="text-4xl md:text-5xl mb-12 text-center">${title}</h2>
-                <div class="swiper-container">
-                    <div class="swiper-wrapper">
+                <div class="scrolling-gallery">
+                    <div class="scrolling-gallery-inner">
                         ${members.map(member => `
-                            <div class="swiper-slide">
-                                <div class="team-card text-center">
-                                    <img src="${member.image}" alt="${member.name}" class="w-32 h-32 rounded-full mx-auto mb-4">
-                                    <h3 class="text-xl font-bold">${member.name}</h3>
-                                    <p class="text-indigo-400">${member.position}</p>
-                                </div>
+                            <div class="team-card text-center">
+                                <img src="${member.image}" alt="${member.name}" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+                                <h3 class="text-xl font-bold">${member.name}</h3>
+                                <p class="text-indigo-400">${member.position}</p>
                             </div>
                         `).join('')}
                     </div>
-                    <div class="swiper-pagination"></div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
                 </div>
             </div>
         </section>`;
-    
-    // Updated to generate Swiper carousel structure
+
     const generateMentorship = ({ title, mentors }) => `
         <section id="mentorship" class="content-section">
             <div class="glass-container">
                 <h2 class="text-4xl md:text-5xl mb-12 text-center">${title}</h2>
-                <div class="swiper-container">
-                    <div class="swiper-wrapper">
+                <div class="scrolling-gallery">
+                    <div class="scrolling-gallery-inner">
                         ${mentors.map(mentor => `
-                            <div class="swiper-slide">
-                                <div class="team-card text-center">
-                                    <img src="${mentor.image}" alt="${mentor.name}" class="w-32 h-32 rounded-full mx-auto mb-4">
-                                    <h3 class="text-xl font-bold">${mentor.name}</h3>
-                                    <p class="text-purple-400">${mentor.expertise}</p>
-                                </div>
+                            <div class="team-card text-center">
+                                <img src="${mentor.image}" alt="${mentor.name}" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+                                <h3 class="text-xl font-bold">${mentor.name}</h3>
+                                <p class="text-purple-400">${mentor.expertise}</p>
                             </div>
                         `).join('')}
                     </div>
-                    <div class="swiper-pagination"></div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
                 </div>
             </div>
         </section>`;
@@ -147,25 +146,24 @@ document.addEventListener("DOMContentLoaded", () => {
         <section id="video-address" class="content-section">
             <div class="glass-container grid md:grid-cols-2 gap-16 items-center">
                 <div class="video-container">
-                    <iframe class="w-full h-80 rounded-lg" src="${videoUrl}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe class="w-full h-80 rounded-lg shadow-lg" src="${videoUrl}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 <div class="address-container text-left">
                     <h3 class="text-3xl font-bold mb-4">${title}</h3>
-                    <p class="mb-2"><i class="ph-map-pin-line mr-2"></i>${address}</p>
-                    <p class="mb-2"><i class="ph-phone-call mr-2"></i>${phone}</p>
-                    <p><i class="ph-envelope-simple mr-2"></i>${email}</p>
+                    <p class="mb-2 flex items-center"><i class="ph-map-pin-line mr-3 text-2xl text-indigo-400"></i>${address}</p>
+                    <p class="mb-2 flex items-center"><i class="ph-phone-call mr-3 text-2xl text-indigo-400"></i>${phone}</p>
+                    <p class="flex items-center"><i class="ph-envelope-simple mr-3 text-2xl text-indigo-400"></i>${email}</p>
                 </div>
             </div>
         </section>`;
 
-    // Updated to generate Swiper carousel structure
     const generatePartners = ({ title, logos }) => `
         <section id="partners" class="content-section">
             <div class="glass-container">
                 <h2 class="text-4xl md:text-5xl mb-12 text-center">${title}</h2>
                 <div class="swiper-container">
                      <div class="swiper-wrapper">
-                        ${logos.map(p => `<div class="swiper-slide"><img src="${p.logo}" alt="${p.name}" class="partner-logo"></div>`).join('')}
+                        ${logos.map(p => `<div class="swiper-slide"><img src="${p.logo}" alt="${p.name}" class="partner-logo" onerror="this.style.display='none'"></div>`).join('')}
                     </div>
                     <div class="swiper-pagination"></div>
                 </div>
@@ -230,43 +228,25 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function initializeCarousels() {
-        new Swiper('#startups .swiper-container', {
-            loop: true,
-            slidesPerView: 1,
-            spaceBetween: 30,
-            autoplay: { delay: 3000, disableOnInteraction: false },
-            pagination: { el: '#startups .swiper-pagination', clickable: true },
-            breakpoints: { 768: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } }
-        });
-
-        new Swiper('#management .swiper-container', {
-            loop: true,
-            slidesPerView: 1,
-            spaceBetween: 30,
-            autoplay: { delay: 3500, disableOnInteraction: false },
-            pagination: { el: '#management .swiper-pagination', clickable: true },
-            navigation: { nextEl: '#management .swiper-button-next', prevEl: '#management .swiper-button-prev' },
-            breakpoints: { 640: { slidesPerView: 2 }, 1024: { slidesPerView: 4 } }
-        });
-
-        new Swiper('#mentorship .swiper-container', {
-            loop: true,
-            slidesPerView: 1,
-            spaceBetween: 30,
-            autoplay: { delay: 4000, disableOnInteraction: false },
-            pagination: { el: '#mentorship .swiper-pagination', clickable: true },
-            navigation: { nextEl: '#mentorship .swiper-button-next', prevEl: '#mentorship .swiper-button-prev' },
-            breakpoints: { 640: { slidesPerView: 2 }, 1024: { slidesPerView: 4 } }
-        });
-
-        new Swiper('#partners .swiper-container', {
-            loop: true,
-            slidesPerView: 2,
-            spaceBetween: 30,
-            autoplay: { delay: 2500, disableOnInteraction: false },
-            pagination: { el: '#partners .swiper-pagination', clickable: true },
-            breakpoints: { 640: { slidesPerView: 3 }, 1024: { slidesPerView: 5 } }
-        });
+        if (document.querySelector('#partners .swiper-container')) {
+            new Swiper('#partners .swiper-container', {
+                loop: true,
+                slidesPerView: 2,
+                spaceBetween: 30,
+                autoplay: {
+                    delay: 2500,
+                    disableOnInteraction: false
+                },
+                pagination: {
+                    el: '#partners .swiper-pagination',
+                    clickable: true
+                },
+                breakpoints: {
+                    640: { slidesPerView: 3 },
+                    1024: { slidesPerView: 5 }
+                }
+            });
+        }
     }
 
     loadContent();

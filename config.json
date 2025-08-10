@@ -50,60 +50,34 @@
   "startups": {
     "title": "Our Innovators",
     "items": [
-      { "name": "Startup Name 1", "logo": "https://placehold.co/200x200/1a1a2e/ffffff?text=Startup+Logo", "description": "Brief description of the startup's mission and technology." },
-      { "name": "Startup Name 2", "logo": "https://placehold.co/200x200/1a1a2e/ffffff?text=Startup+Logo", "description": "Brief description of the startup's mission and technology." },
-      { "name": "Startup Name 3", "logo": "https://placehold.co/200x200/1a1a2e/ffffff?text=Startup+Logo", "description": "Brief description of the startup's mission and technology." },
-      { "name": "Startup Name 1", "logo": "https://placehold.co/200x200/1a1a2e/ffffff?text=Startup+Logo", "description": "Brief description of the startup's mission and technology." },
-      { "name": "Startup Name 2", "logo": "https://placehold.co/200x200/1a1a2e/ffffff?text=Startup+Logo", "description": "Brief description of the startup's mission and technology." },
-      { "name": "Startup Name 3", "logo": "https://placehold.co/200x200/1a1a2e/ffffff?text=Startup+Logo", "description": "Brief description of the startup's mission and technology." },
-      { "name": "Startup Name 1", "logo": "https://placehold.co/200x200/1a1a2e/ffffff?text=Startup+Logo", "description": "Brief description of the startup's mission and technology." },
-      { "name": "Startup Name 2", "logo": "https://placehold.co/200x200/1a1a2e/ffffff?text=Startup+Logo", "description": "Brief description of the startup's mission and technology." },
-      { "name": "Startup Name 3", "logo": "https://placehold.co/200x200/1a1a2e/ffffff?text=Startup+Logo", "description": "Brief description of the startup's mission and technology." },
-      { "name": "Startup Name 1", "logo": "https://placehold.co/200x200/1a1a2e/ffffff?text=Startup+Logo", "description": "Brief description of the startup's mission and technology." },
-      { "name": "Startup Name 2", "logo": "https://placehold.co/200x200/1a1a2e/ffffff?text=Startup+Logo", "description": "Brief description of the startup's mission and technology." },
-      { "name": "Startup Name 3", "logo": "https://placehold.co/200x200/1a1a2e/ffffff?text=Startup+Logo", "description": "Brief description of the startup's mission and technology." }
+      { "name": "Tech Innovators Inc.", "logo": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80", "description": "Pioneering AI-driven solutions for sustainable urban mobility." },
+      { "name": "GreenLeaf Analytics", "logo": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80", "description": "Harnessing IoT and data analytics for precision agriculture." },
+      { "name": "QuantumLeap Labs", "logo": "https://images.unsplash.com/photo-1560264280-9243f79a2963?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80", "description": "Developing next-gen quantum computing technologies." },
+      { "name": "BioSynth Solutions", "logo": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80", "description": "Revolutionizing healthcare with biosynthetic materials." },
+      { "name": "Helios Power", "logo": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80", "description": "Innovating decentralized solar energy grids for rural communities." },
+      { "name": "AquaPure Technologies", "logo": "https://images.unsplash.com/photo-1581092921447-4a0b898c6918?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80", "description": "Creating advanced water purification systems using nanotechnology." }
     ]
   },
   "management": {
     "title": "Meet the Team",
     "members": [
-      { "name": "Full Name", "position": "Position", "image": "https://placehold.co/200x200/4f46e5/ffffff?text=Team" },
-      { "name": "Full Name", "position": "Position", "image": "https://placehold.co/200x200/4f46e5/ffffff?text=Team" },
-      { "name": "Full Name", "position": "Position", "image": "https://placehold.co/200x200/4f46e5/ffffff?text=Team" },
-      { "name": "Full Name", "position": "Position", "image": "https://placehold.co/200x200/4f46e5/ffffff?text=Team" },
-      { "name": "Full Name", "position": "Position", "image": "https://placehold.co/200x200/4f46e5/ffffff?text=Team" },
-      { "name": "Full Name", "position": "Position", "image": "https://placehold.co/200x200/4f46e5/ffffff?text=Team" },
-      { "name": "Full Name", "position": "Position", "image": "https://placehold.co/200x200/4f46e5/ffffff?text=Team" },
-      { "name": "Full Name", "position": "Position", "image": "https://placehold.co/200x200/4f46e5/ffffff?text=Team" },
-      { "name": "Full Name", "position": "Position", "image": "https://placehold.co/200x200/4f46e5/ffffff?text=Team" },
-      { "name": "Full Name", "position": "Position", "image": "https://placehold.co/200x200/4f46e5/ffffff?text=Team" },
-      { "name": "Full Name", "position": "Position", "image": "https://placehold.co/200x200/4f46e5/ffffff?text=Team" },
-      { "name": "Full Name", "position": "Position", "image": "https://placehold.co/200x200/4f46e5/ffffff?text=Team" },
-      { "name": "Full Name", "position": "Position", "image": "https://placehold.co/200x200/4f46e5/ffffff?text=Team" },
-      { "name": "Full Name", "position": "Position", "image": "https://placehold.co/200x200/4f46e5/ffffff?text=Team" },
-      { "name": "Full Name", "position": "Position", "image": "https://placehold.co/200x200/4f46e5/ffffff?text=Team" },
-      { "name": "Full Name", "position": "Position", "image": "https://placehold.co/200x200/4f46e5/ffffff?text=Team" }
+      { "name": "Dr. Evelyn Reed", "position": "CEO & Chief Scientist", "image": "https://images.unsplash.com/photo-1544005313-94ddf0286de2?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" },
+      { "name": "Marcus Chen", "position": "Chief Technology Officer", "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" },
+      { "name": "Aisha Khan", "position": "Chief Operating Officer", "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" },
+      { "name": "Ben Carter", "position": "Head of Engineering", "image": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" },
+      { "name": "Sofia Reyes", "position": "Director of R&D", "image": "https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" },
+      { "name": "David Lee", "position": "Lead Product Manager", "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" }
     ]
   },
   "mentorship": {
     "title": "Our Mentors",
     "mentors": [
-      { "name": "Mentor Name", "expertise": "Area of Expertise", "image": "https://placehold.co/200x200/c026d3/ffffff?text=Mentor" },
-      { "name": "Mentor Name", "expertise": "Area of Expertise", "image": "https://placehold.co/200x200/c026d3/ffffff?text=Mentor" },
-      { "name": "Mentor Name", "expertise": "Area of Expertise", "image": "https://placehold.co/200x200/c026d3/ffffff?text=Mentor" },
-      { "name": "Mentor Name", "expertise": "Area of Expertise", "image": "https://placehold.co/200x200/c026d3/ffffff?text=Mentor" },
-      { "name": "Mentor Name", "expertise": "Area of Expertise", "image": "https://placehold.co/200x200/c026d3/ffffff?text=Mentor" },
-      { "name": "Mentor Name", "expertise": "Area of Expertise", "image": "https://placehold.co/200x200/c026d3/ffffff?text=Mentor" },
-      { "name": "Mentor Name", "expertise": "Area of Expertise", "image": "https://placehold.co/200x200/c026d3/ffffff?text=Mentor" },
-      { "name": "Mentor Name", "expertise": "Area of Expertise", "image": "https://placehold.co/200x200/c026d3/ffffff?text=Mentor" },
-      { "name": "Mentor Name", "expertise": "Area of Expertise", "image": "https://placehold.co/200x200/c026d3/ffffff?text=Mentor" },
-      { "name": "Mentor Name", "expertise": "Area of Expertise", "image": "https://placehold.co/200x200/c026d3/ffffff?text=Mentor" },
-      { "name": "Mentor Name", "expertise": "Area of Expertise", "image": "https://placehold.co/200x200/c026d3/ffffff?text=Mentor" },
-      { "name": "Mentor Name", "expertise": "Area of Expertise", "image": "https://placehold.co/200x200/c026d3/ffffff?text=Mentor" },
-      { "name": "Mentor Name", "expertise": "Area of Expertise", "image": "https://placehold.co/200x200/c026d3/ffffff?text=Mentor" },
-      { "name": "Mentor Name", "expertise": "Area of Expertise", "image": "https://placehold.co/200x200/c026d3/ffffff?text=Mentor" },
-      { "name": "Mentor Name", "expertise": "Area of Expertise", "image": "https://placehold.co/200x200/c026d3/ffffff?text=Mentor" },
-      { "name": "Mentor Name", "expertise": "Area of Expertise", "image": "https://placehold.co/200x200/c026d3/ffffff?text=Mentor" }
+      { "name": "Dr. Aris Thorne", "expertise": "Quantum Computing", "image": "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" },
+      { "name": "Isabella Rossi", "expertise": "FinTech & Blockchain", "image": "https://images.unsplash.com/photo-1521119989659-a83eee488004?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" },
+      { "name": "Kenji Tanaka", "expertise": "Robotics & Automation", "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" },
+      { "name": "Fatima Al-Jamil", "expertise": "Biotechnology", "image": "https://images.unsplash.com/photo-1557053910-d9eadeed1c58?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" },
+      { "name": "Oskar Novak", "expertise": "AI & Machine Learning", "image": "https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" },
+      { "name": "Chidinma Okoro", "expertise": "Sustainable Energy", "image": "https://images.unsplash.com/photo-1580852300654-739e4e341146?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" }
     ]
   },
   "videoAddress": {
@@ -116,18 +90,18 @@
   "partners": {
     "title": "Our Esteemed Partners",
     "logos": [
-      { "name": "Partner 1", "logo": "/assets/partner1.png" },
-      { "name": "Partner 2", "logo": "/assets/partner2.png" },
-      { "name": "Partner 3", "logo": "/assets/partner3.png" },
-      { "name": "Partner 4", "logo": "/assets/partner4.png" },
-      { "name": "Partner 1", "logo": "/assets/partner1.png" },
-      { "name": "Partner 2", "logo": "/assets/partner2.png" },
-      { "name": "Partner 3", "logo": "/assets/partner3.png" },
-      { "name": "Partner 4", "logo": "/assets/partner4.png" },
-      { "name": "Partner 1", "logo": "/assets/partner1.png" },
-      { "name": "Partner 2", "logo": "/assets/partner2.png" },
-      { "name": "Partner 3", "logo": "/assets/partner3.png" },
-      { "name": "Partner 4", "logo": "/assets/partner4.png" }
+      { "name": "Partner 1", "logo": "assets/partner1.png" },
+      { "name": "Partner 2", "logo": "assets/partner2.png" },
+      { "name": "Partner 3", "logo": "assets/partner3.png" },
+      { "name": "Partner 4", "logo": "assets/partner4.png" },
+      { "name": "Partner 1", "logo": "assets/partner1.png" },
+      { "name": "Partner 2", "logo": "assets/partner2.png" },
+      { "name": "Partner 3", "logo": "assets/partner3.png" },
+      { "name": "Partner 4", "logo": "assets/partner4.png" },
+      { "name": "Partner 1", "logo": "assets/partner1.png" },
+      { "name": "Partner 2", "logo": "assets/partner2.png" },
+      { "name": "Partner 3", "logo": "assets/partner3.png" },
+      { "name": "Partner 4", "logo": "assets/partner4.png" }
     ]
   },
   "contact": {

@@ -21,6 +21,35 @@ body {
     scrollbar-width: none;  /* Firefox */
 }
 
+/* =========== Preloader =========== */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #0c0c1d;
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease-out;
+}
+#preloader.fade-out {
+    opacity: 0;
+}
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #8b5cf6;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
 /* =========== Starfield Background Canvas =========== */
 #background-canvas {
     position: fixed;
@@ -28,7 +57,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* Place it behind all other content */
+    z-index: -1;
 }
 
 /* =========== Main Content Layout =========== */
@@ -60,8 +89,8 @@ body {
     width: 100%;
     max-width: 1200px;
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-    overflow: hidden; /* Re-enabled to prevent carousel overflow */
-    position: relative; /* Added for arrow positioning context */
+    overflow: hidden;
+    position: relative;
 }
 
 /* =========== Typography =========== */
@@ -73,7 +102,7 @@ h1, h2, h3 {
 }
 
 h1 {
-    font-size: clamp(2.5rem, 5vw, 5rem); /* Responsive font size */
+    font-size: clamp(2.5rem, 5vw, 5rem);
     line-height: 1.1;
     text-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
 }
@@ -94,13 +123,10 @@ p {
     line-height: 1.8;
     color: #c0c0c0;
     max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 20px;
+    margin: 0 auto 20px;
 }
 
 /* =========== UI Elements =========== */
-/* Custom Buttons */
 .cta-button {
     font-family: 'Syne', sans-serif;
     font-weight: 700;
@@ -137,7 +163,7 @@ p {
     padding: 25px;
     border-radius: 15px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 100%; /* Ensure cards in a row have same height */
+    height: 100%;
 }
 .about-card:hover, .team-card:hover {
     transform: translateY(-10px);
@@ -147,7 +173,7 @@ p {
 /* Partner Logos */
 .partner-logo {
     height: 60px;
-    margin: 20px auto; /* Center logo in slide */
+    margin: 20px auto;
     filter: grayscale(100%) brightness(1.5) contrast(0.8);
     transition: all 0.3s ease;
     opacity: 0.7;
@@ -176,6 +202,29 @@ p {
     border-color: #8b5cf6; /* Indigo focus color */
 }
 
+/* =========== Scrolling Gallery (for Startups, Team, Mentors) =========== */
+.scrolling-gallery {
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+}
+.scrolling-gallery-inner {
+    display: flex;
+    width: max-content;
+    animation: scroll 30s linear infinite;
+}
+.scrolling-gallery-inner:hover {
+    animation-play-state: paused;
+}
+.scrolling-gallery .team-card {
+    margin: 0 15px;
+    width: 300px;
+}
+@keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
 /* =========== Header =========== */
 header {
     background: rgba(12, 12, 29, 0.5);
@@ -191,23 +240,19 @@ header {
     bottom: 0;
     z-index: 10;
     display: flex;
-    flex-direction: column; /* This is the key to making it vertical */
+    flex-direction: column;
     align-items: center;
 }
-
 .social-sidebar a {
     margin-bottom: 20px;
-    font-size: 1.5rem; /* 24px */
-    color: #c0c0c0; /* Light gray for icons */
+    font-size: 1.5rem;
+    color: #c0c0c0;
     transition: color 0.3s ease, transform 0.3s ease;
 }
-
 .social-sidebar a:hover {
-    color: #8b5cf6; /* Indigo color on hover */
+    color: #8b5cf6;
     transform: scale(1.2) translateY(-2px);
 }
-
-/* This creates the vertical line */
 .social-sidebar::after {
     content: '';
     width: 1px;
@@ -216,79 +261,7 @@ header {
     display: block;
 }
 
-/* =========== Carousel (Swiper.js) Styles =========== */
-.swiper-container {
-    width: 100%;
-    padding-top: 20px;
-    padding-bottom: 50px; /* Space for pagination */
-    position: static; /* Let the glass-container handle positioning */
-}
-
-.swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#partners .swiper-slide {
-    height: 100px; /* Specific height for partner logos */
-}
-
-/* Carousel Navigation Arrows */
-.swiper-button-next,
-.swiper-button-prev {
-    position: absolute; /* Position relative to .glass-container */
-    top: 60%;
-    transform: translateY(-50%);
-    color: #8b5cf6; /* Indigo color for arrows */
-    transition: transform 0.2s ease;
-}
-
-/* Adjusted arrow positions to be inside the container's padding */
-.swiper-button-next {
-    right: 10px; 
-}
-.swiper-button-prev {
-    left: 10px;
-}
-
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-    transform: translateY(-50%) scale(1.2);
-}
-
-/* Carousel Pagination Bullets */
-.swiper-pagination-bullet {
-    background: rgba(255, 255, 255, 0.5);
-}
-
-.swiper-pagination-bullet-active {
-    background: #8b5cf6; /* Indigo active color */
-}
-
-/* =========== Component-Specific Adjustments =========== */
-/* Ensures the banner subtitle is properly centered */
-#banner p {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-
-/* =========== Footer =========== */
-footer {
-    width: 100%;
-    text-align: center;
-}
-
-
 /* =========== Responsive Adjustments =========== */
-@media (max-width: 900px) { /* Increased breakpoint for hiding arrows */
-    .swiper-button-next,
-    .swiper-button-prev {
-        display: none; /* Hide arrows on smaller screens */
-    }
-}
-
 @media (max-width: 768px) {
     .content-section {
         padding: 80px 5%;
@@ -297,9 +270,12 @@ footer {
         padding: 25px;
     }
     header nav ul {
-        display: none; /* Simple mobile nav, can be enhanced with JS */
+        display: none;
     }
     .social-sidebar {
-        display: none; /* Hide social bar on smaller screens */
+        display: none;
+    }
+    .scrolling-gallery .team-card {
+        width: 250px;
     }
 }
